@@ -1,0 +1,55 @@
+➜ Crear ambiente virtual:
+	py -m venv {{enviroment-name}}
+
+➜ Activar ambiente virtual:
+	{{enviroment-name}}\Scripts\activate
+
+➜ Crear proyecto de Django:
+	django-admin startproject {{project-name}}
+
+
+Ubicado en {{project-name}}:
+
+	➜ Iniciar servidor:
+		(Si no tiene la opción, se ejecuta en el localhost:8000)
+		py .\manage.py runserver [{{ip}}:{{port}}] 
+
+	➜ realizar migración:
+		(Si no tiene la opción, realiza las migraciones a todos los modelos)
+		py .\manage.py makemigrations [{{folder-app-name}}] 
+
+	➜ ver código SQL de la migración:
+		(migration-number son los primeros números de la migración. Ej: para '0008_auto_20220104_2150.py' es 0008)
+		py .\manage.py sqlmigrate {{folder-app-name}} {{migration-number}} 
+
+	➜ agregar migración a la base de datos:
+		(Si no tiene la opción, agrega las migraciones de todos los modelos)
+		py .\manage.py migrate [{{folder-app-name}}] 
+
+	➜ Ingresar al Shell del proyecto:
+		py .\manage.py shell
+
+		Iniciado el shell del proyecto:
+
+			➜ Importar Modelo:
+				from {{folder-app-name)}}.models import {{class-model-name}}
+
+			➜ Obtener Filas:
+				{{class-model-name}}.objects.all()
+
+			➜ Obtener Fila con base en una variable o propiedad del modelo:
+				{{class-model-name}}.objects.get({{variable-model}}={{variable-value}})
+
+			➜ Agregar Filas:
+				myRow1 = {{class-model-name}}( {{variable-name-1}}={{variable-value-1}},  {variable-name-2}}={{variable-value-2}}, ...)
+				myRow1.save()
+				myRow2 = {{class-model-name}}( {{variable-name-1}}={{variable-value-1}},  {variable-name-2}}={{variable-value-2}}, ...)
+				myRow1.save()
+
+			➜ Eliminar Fila:
+				{{class-model-name}}.objects.get({{variable-model}}={{variable-value}}).delete()
+				
+			➜ Editar propiedad de la tabla:
+				myRow = {{class-model-name}}.objects.get({{variable-model}}={{variable-value}})
+				myRow.{{variable-model}} = {{new-variable-model-value}}
+				myRow.save()
