@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+
+{% load static %}
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Carlos Masuchi-Portafolio</title>
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'css/fontello.css' %}">
+	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+</head>
+
+<body>
+	<header>
+		<div class="container">
+			<!-- Logo Nombre y Menu -->
+			<div class="nav row rounded-top align-items-stretch justify-content-between">
+				<!-- Nombre de usuario -->
+				<div
+					class="col-md-12 col-lg logo d-flex align-items-center justify-content-center justify-content-lg-start">
+					<a class="nombre" href="{% url 'home' %}" {% block styleName %}{% endblock  %}     >Carlos Masuchi</a>
+					<samp class="icono icon-dot"></samp>
+					<p>Diseño Grafico</p>
+				</div>
+				<!-- Menu de navegación -->
+				<nav class="col-md-12 col-lg-auto menu d-flex align-items-stretch flex-wrap flex-sm-nowrap">
+					<a href="index.html" class="c-1 d-flex align-items-center">
+						<div class="d-flex flex-column text-center">
+							<span>Portafolio</span>
+							<i class="icono icon-briefcase"></i>
+						</div>
+					</a>
+					<a href="about.html" class="c-2 d-flex align-items-center">
+						<div class="d-flex flex-column text-center">
+							<span>Acerca de</span>
+							<i class="icono icon-user"></i>
+						</div>
+					</a>
+					<a href="contact.html" class="c-3 d-flex align-items-center">
+						<div class="d-flex flex-column text-center">
+							<span>Contacto</span>
+							<i class="icono icon-mail"></i>
+						</div>
+					</a>
+				</nav>
+			</div>
+
+			<!--Slider -->
+			<div class="row slider">
+				<div class="col">
+					<div class="carousel slide" id="slider" data-ride="carousel">
+						<ol class="carousel-indicators">
+							<li data-target="#slider" data-slide-to="0" class="active"></li>
+							<li data-target="#slider" data-slide-to="1"></li>
+							<li data-target="#slider" data-slide-to="2"></li>
+						</ol>
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="{% static 'img/slide1.jpg'%}" class="d-block w-100" alt="Slide#1">
+							</div>
+							<div class="carousel-item">
+								<img src="{% static 'img/slide2.jpg' %}" class="d-block w-100" alt="Slide#1">
+							</div>
+							<div class="carousel-item">
+								<img src="{% static 'img/slide3.jpg' %}" class="d-block w-100" alt="Slide#1">
+							</div>
+						</div>
+
+						<a class="carousel-control-prev" href="#slider" role="button" data-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="sr-only">Anterior</span>
+						</a>
+						<a class="carousel-control-next" href="#slider" role="button" data-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="sr-only">Siguiente</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+   {% block content %}
+
+   {% endblock  %}
+
+
+	<!--Piede pagina -->
+   {% block footer%}
+      <footer>
+         <div class="container">
+            <div class="row redes-sociales justify-content-center">
+               <div class="col-auto">
+                  <a href="#" class="icono icon-facebook facebook"></a>
+                  <a href="#" class="icono icon-twitter twitter"></a>
+                  <a href="#" class="icono icon-instagram instagram"></a>
+               </div>
+               <div class="col-12 text-center copyright">
+                  <samp>
+                     <p>Copyright &copy; 2019 · Carlos Masuchi (Diseñador Grafico) </p>
+                  </samp>
+               </div>
+            </div>
+
+         </div>
+      </footer>
+   {% endblock  %}
+
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/scripts.js"></script>
+</body>
+
+</html>

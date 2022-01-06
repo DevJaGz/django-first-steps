@@ -5,10 +5,12 @@ from .models import Post
 
 def posts(request):
     posts = Post.objects.all()
-    return HttpResponse(posts)
+    # return HttpResponse(posts)
+    return render(request, 'blogs.html')
 
 
 def post(request, id):
     post = Post.objects.get(id=id)
     content = f"{post.title} - {post.description}"
-    return HttpResponse(content)
+    # return HttpResponse(content)
+    return render(request, 'blog.html')

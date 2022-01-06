@@ -53,3 +53,12 @@ Ubicado en {{project-name}}:
 				myRow = {{class-model-name}}.objects.get({{variable-model}}={{variable-value}})
 				myRow.{{variable-model}} = {{new-variable-model-value}}
 				myRow.save()
+
+	➜ Crear super usuario:
+		py .\manage.py createsuperuser
+
+
+Proyecto:
+	user: jgomez
+	password: admin
+	correo: jgomez@corrosioncic.com

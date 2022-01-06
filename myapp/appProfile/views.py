@@ -12,11 +12,12 @@ def profile(request):
     # p1.save()
     # p2 = Project(title="Curso CSS", description="Descripción del Curso CSS")
     # p2.save()
-    # p3 = Project(title="Curso DJANGO", description="Descripción del Curso DJANGO")
+    # p3 = Project(title="Curso DJANGO",
+    #              description="Descripción del Curso DJANGO")
     # p3.save()
 
     """ AGREGAR NUEVAS FILAS A LA TABLA """
     projects = Project.objects.all()
-    print(projects)
 
-    return HttpResponse(projects)
+    # return HttpResponse(projects)
+    return render(request, 'profile.html')
