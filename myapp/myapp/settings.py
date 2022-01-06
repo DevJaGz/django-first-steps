@@ -23,18 +23,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-1u^zu96+sv$c*jw*pa)!+il4dd+1m3i%(l3c(4$afzik5i9k_c'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
 
 INSTALLED_APPS = [
     # myApp
-    'core.apps.CoreConfig',
+    'core',
+    # 'core.apps.CoreConfig',
     'blog.apps.BlogConfig',
     'appProfile.apps.AppprofileConfig',
+
 
     # Django
     'django.contrib.admin',

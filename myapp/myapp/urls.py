@@ -25,5 +25,8 @@ urlpatterns = [
     path('', include('core.urls')),
     path('blog/', include('blog.urls')),
     path('profile/', include('appProfile.urls')),
-    path('admin/', admin.site.urls)
+    path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+handler404 = "core.views.error_404"
